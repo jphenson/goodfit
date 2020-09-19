@@ -96,7 +96,7 @@ program define goodfit, rclass
 	drop P_logit P_pos_true P_neg_true P_pos_false P_neg_false
 	}
 	di as text "Best cutoff was " as result `cutoff_temp'
-	di as text "Correctly classified was " as result `max_Pcorr_temp' as text " at cutoff " as result `cutoff_temp'
+	di as text "Correctly classified was " as result `max_Pcorr_temp' as text "% at cutoff " as result `cutoff_temp'
 	di as text ""
 	di as text "{hline 11}{c TT}{hline 14}True{hline 11}{c TT}{hline 15}"
 	di as text "Classified {c |}          D           ~D     {c |}      Total"
