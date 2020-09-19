@@ -95,7 +95,7 @@ program define goodfit, rclass
 	scalar P_f_neg_rate2 = ((n_false/(n_false+n_true)))*100
 	drop P_logit P_pos_true P_neg_true P_pos_false P_neg_false
 	}
-	di as text "Best cutoff was " as result `cutoff_temp'
+	di as text "Best cutoff " as result `cutoff_temp'
 	di as text "Correctly classified was " as result `max_Pcorr_temp' as text "% at cutoff " as result `cutoff_temp'
 	di as text ""
 	di as text "{hline 11}{c TT}{hline 14}True{hline 11}{c TT}{hline 15}"
