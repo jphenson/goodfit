@@ -14,7 +14,7 @@ This program is intended to be used with any binary outcome model such as but no
 
 Example
 ---------
-
+<img src="https://raw.githubusercontent.com/jphenson/goodfit/master/files/example_table.png" alt="Image 1" title="Example 1" width="50%" height="50%" />  
 
 
 
