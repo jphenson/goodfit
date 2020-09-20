@@ -23,19 +23,19 @@ This program is intended to be used with any binary outcome model such as but no
 {title:Options}
 
 {p 4 4 2}
-{bf:true_y}  provides variable name of the the original outcomes variable.
+{bf:true_y} the variable name of the original outcomes variable.
 
 {p 4 4 2}
-{bf:y_pred} provides variable name of the the predicted outcome variable.    {break}
+{bf:y_pred} the variable name of the predicted outcome variable.    {break}
 
 {p 4 4 2}
-{bf:cutoff} provides the positive cutoff threshold if {bf:max_cutoff} is not used. The default number is set to 0.5.
+{bf:cutoff} the positive cutoff threshold if {bf:max_cutoff} is not used. The default number is set to 0.5.
 
 {p 4 4 2}
 {bf:max_cutoff} approximates the optimal positive cutoff threshold by a grid search using quartiles of the predicted outcome as estimation points. The default number of quartiles is 50.
 
 {p 4 4 2}
-{bf:n_quart} Allow the user to set the number of quartiles overriding  the default 50.
+{bf:n_quart} Allow the user to set the number of quartiles overriding the default 50.
 
 
 {title:Examples}
@@ -44,28 +44,20 @@ This program is intended to be used with any binary outcome model such as but no
 {title:Stored results}
 
 {p 4 4 2}
-goodfit stores the following in r():
+{bf:goodfit} stores the following in {bf:r()}:
 
 
 {title:Scalars}
 
 {p 4 4 2}
-r(p_neg_pred) negative predictive value
-
-{p 4 4 2}
-r(p_pos_pred) positive predictive value
-
-{p 4 4 2}
-r(p_spec) specificity
-
-{p 4 4 2}
-r(p_sens) sensitivity
-
-{p 4 4 2}
-r(f_cutoff) final cutoff value, if max_cutoff is not used it is the input value
-
-{p 4 4 2}
-r(p_correct) percent correctly classified
+{bf:r(p_correct)} percent correctly classified    {break}
+{bf:r(f_cutoff)} final cutoff value    {break}
+{bf:r(p_neg_pred)} negative predictive value    {break}
+{bf:r(p_pos_pred)} positive predictive value    {break}
+{bf:r(p_t_pos_rate)} true positive rate    {break}
+{bf:r(p_t_neg_rate)} true negative rate    {break}
+{bf:r(p_f_pos_rate)} false positive rate    {break}
+{bf:r(p_f_neg_rate)} false negative rate    {break}
 
 
 {title:Issues}

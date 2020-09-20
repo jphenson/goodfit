@@ -18,15 +18,15 @@ This program is intended to be used with any binary outcome model such as but no
 Options
 ----------
 
-__true_y__  provides variable name of the the original outcomes variable.
+__true_y__ the variable name of the original outcomes variable.
 
-__y_pred__ provides variable name of the the predicted outcome variable.  
+__y_pred__ the variable name of the predicted outcome variable.  
 
-__cutoff__ provides the positive cutoff threshold if __max_cutoff__ is not used. The default number is set to 0.5.
+__cutoff__ the positive cutoff threshold if __max_cutoff__ is not used. The default number is set to 0.5.
 
 __max_cutoff__ approximates the optimal positive cutoff threshold by a grid search using quartiles of the predicted outcome as estimation points. The default number of quartiles is 50.
 
-__n_quart__ Allow the user to set the number of quartiles overriding  the default 50.
+__n_quart__ Allow the user to set the number of quartiles overriding the default 50.
 
 Examples
 ----------
@@ -34,22 +34,19 @@ Examples
 Stored results
 ----------
 
-goodfit stores the following in r():
+__goodfit__ stores the following in __r()__:
 
 Scalars
 ----------
 
-r(p_neg_pred) negative predictive value
-
-r(p_pos_pred) positive predictive value
-
-r(p_spec) specificity
-
-r(p_sens) sensitivity
-
-r(f_cutoff) final cutoff value, if max_cutoff is not used it is the input value
-
-r(p_correct) percent correctly classified
+__r(p_correct)__ percent correctly classified  
+__r(f_cutoff)__ final cutoff value  
+__r(p_neg_pred)__ negative predictive value  
+__r(p_pos_pred)__ positive predictive value  
+__r(p_t_pos_rate)__ true positive rate  
+__r(p_t_neg_rate)__ true negative rate  
+__r(p_f_pos_rate)__ false positive rate  
+__r(p_f_neg_rate)__ false negative rate  
 
 Issues
 ----------

@@ -92,22 +92,16 @@ program define goodfit, rclass
 	scalar P_spec = ((n_true)/(p_false+n_true))*100
 	scalar P_pos_pred = ((p_true)/(p_true+p_false))*100
 	scalar P_neg_pred = ((n_true)/(n_true+n_false))*100
-	scalar P_f_pos_rate1 = ((p_false)/(p_false+n_true))*100
-	scalar P_f_neg_rate1 = ((n_false)/(n_false+p_true))*100
-	scalar P_f_pos_rate2 = ((p_false)/(p_false+p_true))*100
-	scalar P_f_neg_rate2 = ((n_false/(n_false+n_true)))*100
+	scalar P_f_pos_rate = ((p_false)/(p_false+n_true))*100
+	scalar P_f_neg_rate = ((n_false)/(n_false+p_true))*100
 	drop P_model P_pos_true P_neg_true P_pos_false P_neg_false
 	}
-<<<<<<< HEAD
 	di as text "Best cutoff was " as result `cutoff_temp'
 	di as text "Correctly classified " as result `max_Pcorr_temp' as text "% at cutoff " as result `cutoff_temp'
-=======
-	di as text "Best cutoff " as result `cutoff_temp'
-	di as text "Correctly classified was " as result `max_Pcorr_temp' as text "% at cutoff " as result `cutoff_temp'
->>>>>>> 16d2280110033a52b3b03023eadef2caddb05eca
 	di as text ""
-	di as text "{hline 11}{c TT}{hline 14}True{hline 11}{c TT}{hline 15}"
-	di as text "Classified {c |}          D           ~D     {c |}      Total"
+	di as text "{hline 11}{c TT}{hline 8}True Condition{hline 7}{c TT}{hline 15}"
+	di as text "Predicted  {c |}          T           ~T     {c |}      Total"
+	di as text "Condition  {c |}                             {c |}           "
 	di as text "{hline 11}{c +}{hline 29}{c +}{hline 15}"
 	di as text "     +     {c |}   " as result %10.0g p_true "  " %10.0g p_false as text "    {c |}  " as result %10.0g (p_true+p_false)
 	di as text "     -     {c |}   " as result %10.0g n_false "  " %10.0g n_true as text "    {c |}  " as result %10.0g (n_false+n_true)
@@ -118,25 +112,25 @@ program define goodfit, rclass
 	di as text "True D defined as `true_y' != 0 "
 	di as text ""
 	di as text "{hline 42}{c TT}{hline 8}"
-	di as text "Sensitivity                     Pr( +| D) {c |} "  as result %3.2f P_sens as text "%"
-	di as text "Specificity                     Pr( -|~D) {c |} "  as result %3.2f P_spec as text "%"
-	di as text "Positive predictive value       Pr( D| +) {c |} "  as result %3.2f P_pos_pred as text "%"
-	di as text "Negative predictive value       Pr(~D| -) {c |} "  as result %3.2f P_neg_pred as text "%"
+	di as text "True Positive Rate              Pr( +| T) {c |} "  as result %3.2f P_t_pos_rate as text "%"
+	di as text "True Negative Rate              Pr( -|~T) {c |} "  as result %3.2f P_t_neg_rate as text "%"
+	di as text "Positive predictive value       Pr( T| +) {c |} "  as result %3.2f P_pos_pred as text "%"
+	di as text "Negative predictive value       Pr(~T| -) {c |} "  as result %3.2f P_neg_pred as text "%"
 	di as text "{hline 42}{c +}{hline 8}"
-	di as text "False + rate for true ~D        Pr( +|~D) {c |} "  as result %3.2f P_f_pos_rate1 as text "%"
-	di as text "False - rate for true D         Pr( -| D) {c |} "  as result %3.2f P_f_neg_rate1 as text "%"
-	di as text "False + rate for classified +   Pr(~D| +) {c |} "  as result %3.2f P_f_pos_rate2 as text "%"
-	di as text "False - rate for classified -   Pr( D| -) {c |} "  as result %3.2f P_f_neg_rate2 as text "%"
+	di as text "False positive rate             Pr( +|~T) {c |} "  as result %3.2f P_f_pos_rate as text "%"
+	di as text "False negative rate             Pr( -| T) {c |} "  as result %3.2f P_f_neg_rate as text "%"
 	di as text "{hline 42}{c +}{hline 8}"
 	di as text "Correctly classified                      {c |} "  as result %3.2f P_correct as text "%"
 	di as text "{hline 42}{c BT}{hline 8}"
 
 	return scalar p_correct = P_correct
 	return scalar f_cutoff = `final_cut_off'
-	return scalar p_sens = P_sens
-	return scalar p_spec = P_spec
+	return scalar p_t_pos_rate = P_t_pos_rate
+	return scalar p_t_neg_rate = P_t_neg_rate
 	return scalar p_pos_pred = P_pos_pred
 	return scalar p_neg_pred = P_neg_pred
+	return scalar p_f_pos_rate = P_f_pos_rate
+	return scalar p_f_neg_rate = P_f_neg_rate
 end 
 
 *************************************************************
