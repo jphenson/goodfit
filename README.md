@@ -34,19 +34,16 @@ __n_quart__ Allow the user to set the number of quartiles overriding  the defaul
 Stored results
 ----------
 
-goodfit stores the following in r():  
+__goodfit__ stores the following in __r()__:  
 
 Scalars
 ----------
 
-r(p_neg_pred) negative predictive value
-
-r(p_pos_pred) positive predictive value
-
-r(p_spec) specificity
-
-r(p_sens) sensitivity
-
-r(f_cutoff) final cutoff value, if max_cutoff is not used it is the input value
-
-r(p_correct) percent correctly classified
+__r(p_correct)__ percent correctly classified  
+__r(f_cutoff)__ final cutoff value  
+__r(p_neg_pred)__ negative predictive value  
+__r(p_pos_pred)__ positive predictive value  
+__r(p_t_pos_rate)__ true positive rate  
+__r(p_t_neg_rate)__ true negative rate  
+__r(p_f_pos_rate)__ false positive rate  
+__r(p_f_neg_rate)__ false negative rate 
