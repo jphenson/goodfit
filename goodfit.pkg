@@ -1,0 +1,10 @@
+v 1.1
+d 'GOODFIT': goodfit: a program to display goodness of fit measures for binary outcome models
+d 
+d Author: James Patrick Henson
+d
+d Distribution-Date:   20200926
+d License: GNU General Public License v3.0
+d 
+F goodfit.ado
+F goodfit.sthlp

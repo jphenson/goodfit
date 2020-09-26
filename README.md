@@ -12,11 +12,13 @@ Description
 
 This program is intended to be used with any binary outcome model such as but not limited to probit, logit, logistic, or lasso. It takes the predicted outcome and provides a summary table for the goodness of fit. The program took inspiration from __estat classification__ , but is not limited by model choice and provides an approximate estimate of the optimal positive cutoff threshold. The predicted outcomes of binary models are often between 0 or 1. The positive cutoff threshold is the point that maximizes the correct number of positive outcomes (outcome = 1).   
 
-Example
+Example Table
 ---------
 <img src="https://raw.githubusercontent.com/jphenson/goodfit/master/files/example_table.png" alt="Image 1" title="Example 1" width="50%" height="50%" />  
 
-
+Example Graph
+---------
+<img src="https://raw.githubusercontent.com/jphenson/goodfit/master/files/Example_graph1.svg" alt="Graph 1" title="Example Graph" width="50%" height="50%" />  
 
 Options
 ----------

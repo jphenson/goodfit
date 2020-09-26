@@ -9,7 +9,7 @@
 {title:Syntax}
 
 {p 4 4 2}
-{bf:{ul:goodfit}} [, true_y(string) y_pred(string) cutoff(integer) max_cutoff n_quart(integer)]
+{bf:goodfit} [*true_y*] [*y_pred*] [if] [,  cutoff(integer) max_cutoff n_quart(integer)]
 
 {title:}
 
@@ -20,13 +20,16 @@
 This program is intended to be used with any binary outcome model such as but not limited to probit, logit, logistic, or lasso. It takes the predicted outcome and provides a summary table for the goodness of fit. The program took inspiration from {bf:estat classification} , but is not limited by model choice and provides an approximate estimate of the optimal positive cutoff threshold. The predicted outcomes of binary models are often between 0 or 1. The positive cutoff threshold is the point that maximizes the correct number of positive outcomes (outcome = 1).    {break}
 
 
-{title:Options}
+{title:Variables}
 
 {p 4 4 2}
 {bf:true_y} the variable name of the original outcomes variable.
 
 {p 4 4 2}
-{bf:y_pred} the variable name of the predicted outcome variable.    {break}
+{bf:y_pred} the variable name of the predicted outcome variable. 
+
+
+{title:Options}
 
 {p 4 4 2}
 {bf:cutoff} the positive cutoff threshold if {bf:max_cutoff} is not used. The default number is set to 0.5.
@@ -36,6 +39,9 @@ This program is intended to be used with any binary outcome model such as but no
 
 {p 4 4 2}
 {bf:n_quart} Allow the user to set the number of quartiles overriding the default 50.
+
+{p 4 4 2}
+{bf:Note} : If {bf:cutoff} is not used then {bf:max_cutoff} is required
 
 
 {title:Examples}
@@ -58,6 +64,12 @@ This program is intended to be used with any binary outcome model such as but no
 {bf:r(p_t_neg_rate)} true negative rate    {break}
 {bf:r(p_f_pos_rate)} false positive rate    {break}
 {bf:r(p_f_neg_rate)} false negative rate    {break}
+
+
+{title:Matrices}
+
+{p 4 4 2}
+{bf:e(Gph_results)} Contains the results each quartile estimation    {break}
 
 
 {title:Issues}

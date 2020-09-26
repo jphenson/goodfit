@@ -1,0 +1,5 @@
+v 1.1
+d Materials by James Patrick Henson
+d jphenson1218@gmail.com
+
+p goodfit
