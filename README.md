@@ -1,12 +1,3 @@
----
-title: "goodfit"
-date: \today
-author: "James Patrick Henson"
-bibliography: "goodfit.bib"
-csl: "https://raw.githubusercontent.com/citation-style-language/styles/master/annual-reviews-author-date.csl"
-link-citations: true
-urlcolor: "blue"
----
 # goodfit
 
 __goodfit__ -- Takes the predicted results from a binary outcome model and displays goodness of fit measures.  
@@ -19,7 +10,7 @@ __goodfit__ [*true_y*] [*y_pred*] [if] [,  cutoff(integer) max_cutoff n_quart(in
 Description
 ----------
 
-This program is intended to be used with any binary outcome model such as but not limited to probit, logit, logistic, or lasso. It takes the predicted outcome and provides a summary table for the goodness of fit. The program took inspiration from __estat classification__ , but is not limited by model choice and provides an approximate estimate of the optimal positive cutoff threshold using the Matthews Correlation Coefficient (MCC). In the area machine learning with binary classification the Matthews Correlation Coefficient (MCC) is the preferred single metric, especially for imbalanced data [@chicco2020advantages][@boughorbel2017optimal]. The metric ranges $[-1,1]$ and takes on the value of zero if the prediction is the same as a random guess. A MCC value of one indicates perfect prediction of true positives (TP), true negatives (TN), false negatives (FN), and false positives (FP). MCC is defined as follows
+This program is intended to be used with any binary outcome model such as but not limited to probit, logit, logistic, or lasso. It takes the predicted outcome and provides a summary table for the goodness of fit. The program took inspiration from __estat classification__ , but is not limited by model choice and provides an approximate estimate of the optimal positive cutoff threshold using the Matthews Correlation Coefficient (MCC). In the area machine learning with binary classification the Matthews Correlation Coefficient (MCC) is the preferred single metric, especially for imbalanced data (Chicco & Jurman 2020)(Boughorbel et al. 2017). The metric ranges $[-1,1]$ and takes on the value of zero if the prediction is the same as a random guess. A MCC value of one indicates perfect prediction of true positives (TP), true negatives (TN), false negatives (FN), and false positives (FP). MCC is defined as follows
 
 <img src="http://latex.codecogs.com/svg.latex?&space;MCC&space;=&space;\frac{TP\times&space;TN-FP\times&space;FN}{\sqrt{(TP&plus;FP)\times&space;(TP&plus;FN)\times&space;(TN&plus;FP)\times&space;(TN&plus;FN)}}" title="http://latex.codecogs.com/svg.latex? MCC = \frac{TP\times TN-FP\times FN}{\sqrt{(TP+FP)\times (TP+FN)\times (TN+FP)\times (TN+FN)}}" />
 
@@ -64,7 +55,7 @@ __mcc_graph__ Graphs several goodness of fit measures including MCC over range o
 
 __roc_graph__ Graphs receiver operating characteristic curve (ROC) which places true positive rate on the y-axis and false positive rate on the x-axis. It also calculates the area under the curve to help in model comparison. 
 
-__pr_graph__ Graphs the precision-recall (PRC) curve and is considered a better measure than ROC with imbalanced data [@saito2015precision]. It also calculates the area under the curve to help in model comparison. 
+__pr_graph__ Graphs the precision-recall (PRC) curve and is considered a better measure than ROC with imbalanced data (Saito & Rehmsmeier 2015). It also calculates the area under the curve to help in model comparison. 
 
 Examples
 ----------
@@ -98,3 +89,9 @@ __r(y_pred_str)__ Contains the name of the predicted outcome variable.
 __r(y_outcome_str)__ Contains the name of the true outcome variable.  
 
 ## References
+
+Boughorbel S, Jarray F, El-Anbari M. 2017. Optimal classifier for imbalanced data using matthews correlation coefficient metric. PloS one. 12(6):e0177678
+
+Chicco D, Jurman G. 2020. The advantages of the matthews correlation coefficient (mcc) over f1 score and accuracy in binary classification evaluation. BMC genomics. 21(1):6
+
+Saito T, Rehmsmeier M. 2015. The precision-recall plot is more informative than the roc plot when evaluating binary classifiers on imbalanced datasets. PloS one. 10(3):e0118432
