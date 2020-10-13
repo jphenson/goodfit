@@ -21,7 +21,7 @@ Description
 
 This program is intended to be used with any binary outcome model such as but not limited to probit, logit, logistic, or lasso. It takes the predicted outcome and provides a summary table for the goodness of fit. The program took inspiration from __estat classification__ , but is not limited by model choice and provides an approximate estimate of the optimal positive cutoff threshold using the Matthews Correlation Coefficient (MCC). In the area machine learning with binary classification the Matthews Correlation Coefficient (MCC) is the preferred single metric, especially for imbalanced data [@chicco2020advantages][@boughorbel2017optimal]. The metric ranges $[-1,1]$ and takes on the value of zero if the prediction is the same as a random guess. A MCC value of one indicates perfect prediction of true positives (TP), true negatives (TN), false negatives (FN), and false positives (FP). MCC is defined as follows
 
-$$ MCC = \frac{TP×TN-FP×FN}{\sqrt{(TP+FP)×(TP+FN)×(TN+FP)×(TN+FN)}} $$ 
+<img src="http://latex.codecogs.com/svg.latex?&space;MCC&space;=&space;\frac{TP\times&space;TN-FP\times&space;FN}{\sqrt{(TP&plus;FP)\times&space;(TP&plus;FN)\times&space;(TN&plus;FP)\times&space;(TN&plus;FN)}}" title="http://latex.codecogs.com/svg.latex? MCC = \frac{TP\times TN-FP\times FN}{\sqrt{(TP+FP)\times (TP+FN)\times (TN+FP)\times (TN+FN)}}" />
 
 It another metric is preferred use the __cutoff__ option and the return results to test another measure. 
 
